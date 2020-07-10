@@ -18,8 +18,15 @@ public class RatingService {
         this.ratingRepository = ratingRepository;
     }
 
-    public List<RatingDto> getRatings() {
+    public List<RatingDto> getAllRatings() {
         return ratingRepository.findAll()
+                               .stream()
+                               .map(rating -> new RatingDto(rating.getRoomId(), rating.getRating()))
+                               .collect(Collectors.toList());
+    }
+
+    public List<RatingDto> getRatingsByRoomId(Long roomId) {
+        return ratingRepository.findAllByRoomId(roomId)
                                .stream()
                                .map(rating -> new RatingDto(rating.getRoomId(), rating.getRating()))
                                .collect(Collectors.toList());

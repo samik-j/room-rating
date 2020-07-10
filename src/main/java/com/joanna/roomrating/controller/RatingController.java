@@ -5,6 +5,7 @@ import com.joanna.roomrating.service.RatingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -21,7 +22,12 @@ public class RatingController {
     }
 
     @GetMapping
-    public List<RatingDto> getRatings() {
-        return ratingService.getRatings();
+    public List<RatingDto> getAllRatings() {
+        return ratingService.getAllRatings();
+    }
+
+    @GetMapping(params = {"roomId"})
+    public List<RatingDto> gerRatingsByRoomId(@RequestParam Long roomId) {
+        return ratingService.getRatingsByRoomId(roomId);
     }
 }
