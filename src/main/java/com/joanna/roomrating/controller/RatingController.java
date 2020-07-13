@@ -19,12 +19,8 @@ public class RatingController {
 
     private final RatingService ratingService;
 
-    @Value("${test.property}")
-    private String test;
-
     @Autowired
     public RatingController(RatingService ratingService) {
-        log.info(test);
         this.ratingService = ratingService;
     }
 

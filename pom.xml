@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.joanna</groupId>
-	<artifactId>room-rating</artifactId>
+	<artifactId>roomrating</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>room-rating</name>
+	<name>roomrating</name>
 	<description>Rating service</description>
 
 	<properties>
