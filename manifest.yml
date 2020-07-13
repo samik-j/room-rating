@@ -1,0 +1,8 @@
+---
+applications:
+  - name: room-rating-joanna
+    path: target\room-rating-0.0.1-SNAPSHOT.jar
+    env:
+      spring.profiles.active: cloud
+    services:
+      - eureka-service-joanna
