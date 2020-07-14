@@ -23,7 +23,7 @@ public class RatingController {
     @Value("${test.property}")
     private String test;
 
-    @Value("${service.instance.name}")
+    @Value("${CF_INSTANCE_INDEX}")
     private String instanceName;
 
     @Autowired
