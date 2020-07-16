@@ -6,4 +6,5 @@ applications:
       spring.profiles.active: cloud
     services:
       - eureka
+      - config-server-joanna
     instances: 2
