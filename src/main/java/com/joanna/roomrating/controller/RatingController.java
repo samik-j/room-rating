@@ -2,6 +2,8 @@ package com.joanna.roomrating.controller;
 
 import com.joanna.roomrating.dto.RatingDto;
 import com.joanna.roomrating.service.RatingService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.Authorization;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -32,6 +34,7 @@ public class RatingController {
         this.ratingService = ratingService;
     }
 
+    @ApiOperation(value = "", authorizations = {@Authorization(value = "bearerToken")})
     @PreAuthorize("#oauth2.hasScope('room_rating')")
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public List<RatingDto> getAllRatings() {
@@ -40,7 +43,8 @@ public class RatingController {
         return ratingService.getAllRatings();
     }
 
-    @GetMapping(params = {"roomId"},
+    @ApiOperation(value = "", authorizations = {@Authorization(value = "bearerToken")})
+    @GetMapping(value = "findByRoomId", params = {"roomId"},
             produces = MediaType.APPLICATION_JSON_VALUE)
     public List<RatingDto> gerRatingsByRoomId(@RequestParam Long roomId) {
         return ratingService.getRatingsByRoomId(roomId);
