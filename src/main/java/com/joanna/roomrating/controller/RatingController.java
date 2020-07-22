@@ -32,7 +32,7 @@ public class RatingController {
         this.ratingService = ratingService;
     }
 
-    @PreAuthorize("hasAuthority('custom_mod')")
+    @PreAuthorize("#oauth2.hasScope('room_rating')")
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public List<RatingDto> getAllRatings() {
         log.info(test);

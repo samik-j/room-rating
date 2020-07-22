@@ -9,7 +9,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @EnableDiscoveryClient
 @EnableResourceServer
 @SpringBootApplication
-@EnableGlobalMethodSecurity(prePostEnabled=true)
 public class RoomRatingApplication {
 
     public static void main(String[] args) {
