@@ -5,6 +5,7 @@ applications:
     env:
       spring.profiles.active: cloud
     services:
-      - eureka
+      - eureka-joanna
       - config-server-joanna
+      - rabbitmq-joanna
     instances: 2

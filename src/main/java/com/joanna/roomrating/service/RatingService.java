@@ -1,6 +1,7 @@
 package com.joanna.roomrating.service;
 
 import com.joanna.roomrating.dto.RatingDto;
+import com.joanna.roomrating.model.Rating;
 import com.joanna.roomrating.repository.RatingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,5 +31,9 @@ public class RatingService {
                                .stream()
                                .map(rating -> new RatingDto(rating.getRoomId(), rating.getRating()))
                                .collect(Collectors.toList());
+    }
+
+    public void save(Rating rating) {
+        ratingRepository.save(rating);
     }
 }
