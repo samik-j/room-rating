@@ -8,11 +8,11 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @RabbitListener(queues = "hotel.room-events")
-public class RabbitMQListener {
+public class RoomEventListener {
 
     @RabbitHandler
-    public void consumeRoomEvent2(String message) {
-        log.info("Room event message 12: " + message);
+    public void consumeRoomEvent(String message) {
+        log.info("Room event message: " + message);
     }
 
 }
